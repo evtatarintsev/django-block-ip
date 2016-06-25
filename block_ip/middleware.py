@@ -6,6 +6,9 @@ from models import BlockIP
 
 
 def get_ip(req):
+
+    if 'HTTP_X_FORWARDED_FOR' in req.META:
+        return req.META['HTTP_X_FORWARDED_FOR']
     return req.META['REMOTE_ADDR']
 
 

@@ -3,6 +3,8 @@ django-block-ip
 
 This is a simple application to restrict access by IP address.  There's a few other apps that do this out there, but they tend to have other features such as rate limiting.  I think it's best to leave rate-limiting to rate-limiting specific apps.
 
+MODIFIED TO LOOK AT HTTP_X_FORWARDED_FOR so that it will work behind an ELB, etc.
+
 Usage
 =====
 
