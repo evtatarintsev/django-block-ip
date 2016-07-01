@@ -11,7 +11,10 @@ class BlockIP(models.Model):
     reason_for_block = models.TextField(blank=True, null=True, help_text=_("Optional reason for block"))
 
     def __unicode__(self):
-        return 'BlockIP: %s' % self.network
+        return self.network
+    
+    def __str__(self):
+        return self.network
 
     def get_network(self):
         return ipcalc.Network(self.network)
