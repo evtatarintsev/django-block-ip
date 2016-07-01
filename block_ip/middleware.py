@@ -39,6 +39,5 @@ class BlockIPMiddleware(object):
 
         if is_banned:
             # delete sessions when denied
-            for k in request.session.keys():
-                del request.session[k]
+            request.session.flush()
             return HttpResponseForbidden("")
